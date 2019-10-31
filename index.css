@@ -19,7 +19,7 @@
     background: skyblue;
     border: 1px solid brown;
 }
-.gamer{
+#player{
     position: absolute;
     font-size: 120px;
     color: crimson;

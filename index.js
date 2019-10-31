@@ -1,5 +1,5 @@
 
-class Gamer {
+class Player {
   constructor(x, y) {
     this._x = x;
     this._y = y;
@@ -24,11 +24,11 @@ class Gamer {
     this._y += 10;
   }
 }
-const PlaneJS = new Gamer(100, 200);
+const PlaneJS = new Player(100, 200);
 
 class Move {
   static RenderPlane(PlaneJS) {
-    const PlaneDom = document.querySelector(".gamer");
+    const PlaneDom = document.getElementById('player');
     PlaneDom.style.left = PlaneJS.x + "px";
     PlaneDom.style.right = PlaneJS.x + "px";
     PlaneDom.style.top = PlaneJS.y + "px";
