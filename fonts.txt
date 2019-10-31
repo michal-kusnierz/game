@@ -1,0 +1,20 @@
+<i class="fas fa-tree"></i>
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-dove"></i>
+
+<i class="fas fa-plane"></i>
+<i class="fas fa-horse"></i>
+<i class="fas fa-cat"></i>
+<i class="fas fa-campground"></i>
+
+
+<i class="fas fa-place-of-worship"></i>
+<i class="far fa-building"></i>
+<i class="fas fa-city"></i>
+<i class="fas fa-monument"></i>
+<i class="fas fa-mountain"></i>
+
+<i class="fas fa-fighter-jet"></i>
+
+<i class="fas fa-ambulance"></i>
+
