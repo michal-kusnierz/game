@@ -92,11 +92,14 @@ const
     document.addEventListener("keydown", event => Move.KeySupport(PlaneJS, event));
 };
 
-
-class Obstacles {
-  constructor(x, y) {
+class Obstacle {
+  constructor(name, x, y) {
+    this._name = name;
     this._x = x;
     this._y = y;
+  }
+  get name() {
+    return this._name;
   }
   get x() {
     return this._x;
@@ -104,9 +107,24 @@ class Obstacles {
   get y() {
     return this._y;
   }
+  set name(newName) {
+    this._name = newName;
+  }
+  set x(newX) {
+    this._x = newX;
+  }
+  set y(newY) {
+    this._y = newY;
+  }
 
-  left() {
+  leftObst() {
+    this._x -= 5;
+  }
+  leftSky() {
     this._x -= 10;
+  }
+  leftBird() {
+    this._x -= 15;
   }
 }
 const ObstJS = new Obstacles(-80, 300);
