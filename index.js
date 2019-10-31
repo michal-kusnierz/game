@@ -94,37 +94,19 @@ const
 
 
 class Obstacles {
-  constructor(name, x, y) {
-    this._name = name;
+  constructor(x, y) {
     this._x = x;
     this._y = y;
   }
-  get namet() {
-    return this._name;
-  }  
   get x() {
     return this._x;
   }
   get y() {
     return this._y;
   }
-  set name(newName){
-    this._name = newName;
-  }
-  set x(newX){
-    this._x = newX;
-  }
-  set name(newY){
-    this._y = newY;
-  }
-  leftObst() {
-    this._x -= 5;
-  }
-  leftSky() {
+
+  left() {
     this._x -= 10;
-  }
-  leftBird() {
-    this._x -= 15;
   }
 }
 const ObstJS = new Obstacles(-80, 300);
