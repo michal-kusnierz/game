@@ -140,9 +140,11 @@ const ObstacleArray = [
 ]
 class RenderObstacles {
   static RenderObst() {
-    const Obst = document.querySelectorAll('.moveObst');
+    const Obst = document.querySelectorAll('.moveObst')[0];
     Obst.style.left = ObstacleArray[0].x + "px";
-    Obst.leftObst();
+    ObstacleArray.forEach = (item,i) => {item.leftObst()};
+
+   ObstacleArray[0].leftObst();
     }
   }
 
