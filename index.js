@@ -12,16 +12,16 @@ class Player {
   }
 
   left() {
-    this._x -= 10;
+    this._x -= 1;
   }
   right() {
-    this._x += 10;
+    this._x += 2;
   }
   up() {
-    this._y -= 10;
+    this._y -= 5;
   }
   down() {
-    this._y += 10;
+    this._y += 5;
   }
 }
 const PlaneJS = new Player(100, 200);
@@ -85,7 +85,7 @@ const
   startGame = () => {
     startBtn.style.display = 'none';
     event.preventDefault();
-    setInterval(() => RenderObstacles.RenderObst(),300);
+    setInterval(() => RenderObstacles.RenderObst(),100);
     document.addEventListener("keydown", event => Move.KeySupport(PlaneJS, event));
 };
 
@@ -114,13 +114,13 @@ class Obstacle {
     this._y = newY;
   }
   leftBird() {
-    this._x -= 20;
+    this._x -= 10;
   }
   leftSky() {
     this._x -= 1;
   }
   leftObst() {
-    this._x -= 5;
+    this._x -= 3;
   }
 }
 const ObstacleArray = [
