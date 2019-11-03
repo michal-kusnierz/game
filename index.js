@@ -116,6 +116,9 @@ class Obstacle {
   leftBird() {
     this._x -= 10;
   }
+  downBird() {
+    this._y -= -1;
+  }
   leftSky() {
     this._x -= 1;
   }
@@ -124,11 +127,11 @@ class Obstacle {
   }
 }
 const ObstacleArray = [
-  new Obstacle('img', 580, 130),
+  new Obstacle('img', 640, 120),
   new Obstacle('bird1', 340, 60),
-  new Obstacle('bird2', 840, 30),
+  new Obstacle('bird2', 840, 70),
   new Obstacle('cloud1', 80, 20),
-  new Obstacle('cloud2', 150, 80),
+  new Obstacle('cloud2', 480, 80),
   new Obstacle('cloud3', 540, 30), 
   new Obstacle('mount', -80, 300),
   new Obstacle('tree1', 10, 460),
@@ -157,6 +160,7 @@ class RenderObstacles {
     const City3 = document.querySelector('.city3');
     // ObstacleArray.forEach = (item,i) => {item.leftObst()};
     Bird.style.left = ObstacleArray[0].x + "px";
+    Bird.style.top = ObstacleArray[0].y + "px";
     Bird1.style.left = ObstacleArray[1].x + "px";
     Bird2.style.left = ObstacleArray[2].x + "px";
     Sky1.style.left = ObstacleArray[3].x + "px";
@@ -171,6 +175,7 @@ class RenderObstacles {
     City2.style.left = ObstacleArray[12].x + "px";
     City3.style.left = ObstacleArray[13].x + "px";
     ObstacleArray[0].leftBird();
+    ObstacleArray[0].downBird();
     ObstacleArray[1].leftBird();
     ObstacleArray[2].leftBird();
     ObstacleArray[3].leftSky();

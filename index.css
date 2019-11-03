@@ -97,8 +97,8 @@
 img{
     width: 6%;
     position: absolute;
-    top:130px;
-    left: 580px;
+    top: 120px;
+    left: 640px;
 }
 .bird{
     position: absolute;
@@ -110,7 +110,7 @@ img{
     color:whitesmoke;
 }
 .bird2{
-    top:30px;
+    top: 70px;
     left: 840px;
     color:grey;
 }
@@ -126,7 +126,7 @@ img{
 }
 .cloud2{
     top:80px;
-    left: 150px;
+    left: 480px;
     color:lightgrey;
 }
 .cloud3{
