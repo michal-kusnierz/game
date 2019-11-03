@@ -80,15 +80,12 @@ Move.RenderPlane(PlaneJS);
 document.addEventListener("keydown", event => Move.Collision(PlaneJS, event));
 
 
-/////////moving obstacles//////////
 const 
   startBtn = document.getElementById('start__btn'),
   startGame = () => {
     startBtn.style.display = 'none';
     event.preventDefault();
     setInterval(() => RenderObstacles.RenderObst(),300);
-    // setInterval(() => RenderSkyItems.RenderSky(),300);
-    // setInterval(() => RenderSkyImg.RenderSkyI(),310);
     document.addEventListener("keydown", event => Move.KeySupport(PlaneJS, event));
 };
 
@@ -116,38 +113,78 @@ class Obstacle {
   set y(newY) {
     this._y = newY;
   }
-
+  leftBird() {
+    this._x -= 20;
+  }
+  leftSky() {
+    this._x -= 1;
+  }
   leftObst() {
     this._x -= 5;
   }
-  leftSky() {
-    this._x -= 10;
-  }
-  leftBird() {
-    this._x -= 15;
-  }
 }
 const ObstacleArray = [
-  new Obstacle('Mount', -80, 300),
-  new Obstacle('City1', 370, 390),
-  new Obstacle('City2', 640, 390),
-  new Obstacle('City3', 760, 390),
-  new Obstacle('Bird1', 340, 60),
-  new Obstacle('Bird2', 840, 30),
-  new Obstacle('Cloud1', 80, 20),
-  new Obstacle('Cloud2', 150, 80),
-  new Obstacle('Cloud3', 540, 30)
+  new Obstacle('img', 580, 130),
+  new Obstacle('bird1', 340, 60),
+  new Obstacle('bird2', 840, 30),
+  new Obstacle('cloud1', 80, 20),
+  new Obstacle('cloud2', 150, 80),
+  new Obstacle('cloud3', 540, 30), 
+  new Obstacle('mount', -80, 300),
+  new Obstacle('tree1', 10, 460),
+  new Obstacle('tree2', 55, 475),
+  new Obstacle('tree3', 110, 420),
+  new Obstacle('tree4', 190, 460),
+  new Obstacle('city1', 370, 390),
+  new Obstacle('city2', 640, 390),
+  new Obstacle('city3', 760, 390)
 ]
 class RenderObstacles {
   static RenderObst() {
-    const Obst = document.querySelectorAll('.moveObst')[0];
-    Obst.style.left = ObstacleArray[0].x + "px";
-    ObstacleArray.forEach = (item,i) => {item.leftObst()};
-
-   ObstacleArray[0].leftObst();
-    }
+    const Bird = document.querySelector('img');
+    const Bird1 = document.querySelector('.bird1');
+    const Bird2 = document.querySelector('.bird2');
+    const Sky1 = document.querySelector('.cloud1');
+    const Sky2 = document.querySelector('.cloud2');
+    const Sky3 = document.querySelector('.cloud3');
+    const Mount = document.querySelector('.mount');
+    const Tree1 = document.querySelector('.tree1');
+    const Tree2 = document.querySelector('.tree2');
+    const Tree3 = document.querySelector('.tree3');
+    const Tree4 = document.querySelector('.tree4');
+    const City1 = document.querySelector('.city1');
+    const City2 = document.querySelector('.city2');
+    const City3 = document.querySelector('.city3');
+    // ObstacleArray.forEach = (item,i) => {item.leftObst()};
+    Bird.style.left = ObstacleArray[0].x + "px";
+    Bird1.style.left = ObstacleArray[1].x + "px";
+    Bird2.style.left = ObstacleArray[2].x + "px";
+    Sky1.style.left = ObstacleArray[3].x + "px";
+    Sky2.style.left = ObstacleArray[4].x + "px";
+    Sky3.style.left = ObstacleArray[5].x + "px";
+    Mount.style.left = ObstacleArray[6].x + "px";
+    Tree1.style.left = ObstacleArray[7].x + "px";
+    Tree2.style.left = ObstacleArray[8].x + "px";
+    Tree3.style.left = ObstacleArray[9].x + "px";
+    Tree4.style.left = ObstacleArray[10].x + "px";
+    City1.style.left = ObstacleArray[11].x + "px";
+    City2.style.left = ObstacleArray[12].x + "px";
+    City3.style.left = ObstacleArray[13].x + "px";
+    ObstacleArray[0].leftBird();
+    ObstacleArray[1].leftBird();
+    ObstacleArray[2].leftBird();
+    ObstacleArray[3].leftSky();
+    ObstacleArray[4].leftSky();
+    ObstacleArray[5].leftSky();
+    ObstacleArray[6].leftObst();
+    ObstacleArray[7].leftObst();
+    ObstacleArray[8].leftObst();
+    ObstacleArray[9].leftObst();
+    ObstacleArray[10].leftObst();
+    ObstacleArray[11].leftObst();
+    ObstacleArray[12].leftObst();
+    ObstacleArray[13].leftObst();
   }
-
-  
+}
 
 startBtn.addEventListener('click', startGame);
