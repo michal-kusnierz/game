@@ -37,9 +37,7 @@
 }
 .board{
     display: flex;
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    position: relative;
     width: 1000px;
     height: 600px;
     background: skyblue;
@@ -53,7 +51,7 @@
     z-index: 1;
 }
 #start__btn{
-    position: relative;
+    position: absolute;
     z-index: 1;
     top: 45%;
     left: 35%;
@@ -75,6 +73,7 @@
 }
 .tree{
     position: absolute;
+    display: inline-flex;
     top:460px;
     font-size: 130px;
     color: green;

@@ -31,7 +31,6 @@ class Move {
     PlaneDom.style.left = PlaneJS.x + "px";
     PlaneDom.style.right = PlaneJS.x + "px";
     PlaneDom.style.top = PlaneJS.y + "px";
-    console.log(PlaneJS);
   }
 
   static KeySupport(PlaneJS, event) {
@@ -82,9 +81,10 @@ const
   startGame = () => {
     startBtn.style.display = 'none';
     event.preventDefault();
-    setInterval(() => RenderObstacles.RenderObst(),100);
+    CreateObstacles.CreateObst();
+
+    setInterval(() => RenderObstacles.RenderObst(ObstacleArray, '.board'),100);
     document.addEventListener("keydown", event => Move.KeySupport(PlaneJS, event));
-    console.log(PlaneJS);
 };
 
 class Obstacle {
@@ -140,20 +140,23 @@ const ObstacleArray = [
   new Obstacle('city2', 640, 390),
   new Obstacle('city3', 760, 390)
 ]
+class CreateObstacles {
+  static CreateObst() {
+    const placeToAdd = document.querySelector('.board');
+    placeToAdd.innerHTML = '';
+    Object.values(ObstacleArray).forEach((name,x,y) => {
+      const newObst = document.createElement('div');
+      newObst.innerHTML = '';
+
+      
+      placeToAdd.appendChild(newObst);
+    })
+    }
+  }
+
 class RenderObstacles {
   static RenderObst() {
-    const Bird = document.querySelector('img');
-    const Sky1 = document.querySelector('.cloud1');
-    const City3 = document.querySelector('.city3');
-    // ObstacleArray.forEach = (item,i) => {item.leftObst()};
-    Bird.style.left = ObstacleArray[0].x + "px";
-    Bird.style.top = ObstacleArray[0].y + "px";
-    Sky1.style.left = ObstacleArray[3].x + "px";
-    City3.style.left = ObstacleArray[13].x + "px";
-    ObstacleArray[0].leftBird();
-    ObstacleArray[0].downBird();
-    ObstacleArray[3].leftSky();
-    ObstacleArray[13].leftObst();
+    
   }
 }
 
