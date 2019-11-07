@@ -25,6 +25,9 @@
     color: crimson;
     z-index: 1;
 }
+#player img{
+    width: 9%;
+}
 #start__btn{
     position: relative;
     z-index: 3;
@@ -94,11 +97,17 @@
     z-index: 0;
 }
 
-img{
+.img img{
     width: 6%;
     position: absolute;
     top: 120px;
     left: 640px;
+}
+.bird1 img{
+    width:9%;
+}
+.bird2 img{
+    width:55%;
 }
 .bird{
     position: absolute;
@@ -110,6 +119,7 @@ img{
     color:whitesmoke;
 }
 .bird2{
+    width: 100px;
     top: 70px;
     left: 840px;
     color:grey;
