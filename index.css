@@ -46,7 +46,6 @@
     position: absolute;
     top:200px;
     left:100px;
-    font-size: 120px;
     color: crimson;
     z-index: 1;
 }
@@ -124,10 +123,8 @@
 }
 
 img{
-    width: 6%;
-    position: absolute;
-    top: 120px;
-    left: 640px;
+    width: 25%;
+    /* position: absolute; */
 }
 .bird{
     position: absolute;

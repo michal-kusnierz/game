@@ -29,7 +29,6 @@ class Move {
   static RenderPlane(PlaneJS) {
     const PlaneDom = document.getElementById('player');
     PlaneDom.style.left = PlaneJS.x + "px";
-    PlaneDom.style.right = PlaneJS.x + "px";
     PlaneDom.style.top = PlaneJS.y + "px";
   }
 
@@ -52,22 +51,23 @@ class Move {
         Move.RenderPlane(PlaneJS);
         break;
       default:
-        Move.RenderPlane(PlaneJS);
+        return;
     }
   }
 
   static Collision(PlaneJS) {
     if (
-      PlaneJS.x === 0 ||
-      PlaneJS.x === 880 ||
-      PlaneJS.y === 0 ||
-      PlaneJS.y === 450
+      PlaneJS.x === 0 || PlaneJS.x < 0 || 
+      PlaneJS.x === 880 || PlaneJS.x > 880 ||
+      PlaneJS.y === 0 || PlaneJS.y < 0 ||
+      PlaneJS.y === 450 || PlaneJS.y > 450 
     ) {
       document.querySelector(".board").style.background = "crimson";
       setTimeout(eyeBlink, 150);
       function eyeBlink() {
-        alert("GAME OVER! Sorry, this is the end of your trip.");
         location.reload();
+        alert("GAME OVER! Sorry, this is the end of your trip.");
+        
       }
     }
   }
@@ -81,9 +81,9 @@ const
   startGame = () => {
     startBtn.style.display = 'none';
     event.preventDefault();
-    CreateObstacles.CreateObst();
+    // CreateObstacles.CreateObst();
 
-    setInterval(() => RenderObstacles.RenderObst(ObstacleArray, '.board'),100);
+    // setInterval(() => RenderObstacles.RenderObst(ObstacleArray, '.board'),100);
     document.addEventListener("keydown", event => Move.KeySupport(PlaneJS, event));
 };
 
@@ -140,24 +140,24 @@ const ObstacleArray = [
   new Obstacle('city2', 640, 390),
   new Obstacle('city3', 760, 390)
 ]
-class CreateObstacles {
-  static CreateObst() {
-    const placeToAdd = document.querySelector('.board');
-    placeToAdd.innerHTML = '';
-    Object.values(ObstacleArray).forEach((name,x,y) => {
-      const newObst = document.createElement('div');
-      newObst.innerHTML = '';
+// class CreateObstacles {
+//   static CreateObst() {
+//     const placeToAdd = document.querySelector('.board');
+//     placeToAdd.innerHTML = '';
+//     Object.values(ObstacleArray).forEach((name,x,y) => {
+//       const newObst = document.createElement('div');
+//       newObst.innerHTML = '';
 
       
-      placeToAdd.appendChild(newObst);
-    })
-    }
-  }
+//       placeToAdd.appendChild(newObst);
+//     })
+//     }
+//   }
 
-class RenderObstacles {
-  static RenderObst() {
+// class RenderObstacles {
+//   static RenderObst() {
     
-  }
-}
+//   }
+// }
 
 startBtn.addEventListener('click', startGame);
