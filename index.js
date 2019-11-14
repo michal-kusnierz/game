@@ -82,8 +82,12 @@ document.addEventListener("keydown", event => Move.Collision(PlaneJS, event));
 
 const 
   startBtn = document.getElementById('start__btn'),
+  player = document.getElementById('player'),
+  allObst = document.getElementsByClassName('moveObst'),
   startGame = () => {
     startBtn.style.display = 'none';
+    player.style.display = 'block';
+
     event.preventDefault();
     setInterval(() => RenderObstacles.RenderObst(),100);
     document.addEventListener("keydown", event => Move.KeySupport(PlaneJS, event));
@@ -127,20 +131,20 @@ class Obstacle {
   }
 }
 const ObstacleArray = [
-  new Obstacle('img', 640, 120),
-  new Obstacle('bird1', 340, 60),
-  new Obstacle('bird2', 840, 70),
-  new Obstacle('cloud1', 80, 20),
+  new Obstacle('img', 1140, 120),
+  new Obstacle('bird1', 840, 60),
+  new Obstacle('bird2', 1340, 70),
+  new Obstacle('cloud1', 180, 20),
   new Obstacle('cloud2', 480, 80),
   new Obstacle('cloud3', 540, 30), 
-  new Obstacle('mount', -80, 300),
-  new Obstacle('tree1', 10, 460),
-  new Obstacle('tree2', 55, 475),
-  new Obstacle('tree3', 110, 420),
-  new Obstacle('tree4', 190, 460),
-  new Obstacle('city1', 370, 390),
-  new Obstacle('city2', 640, 390),
-  new Obstacle('city3', 760, 390)
+  new Obstacle('mount', 330, 300),
+  new Obstacle('tree1', 410, 460),
+  new Obstacle('tree2', 455, 475),
+  new Obstacle('tree3', 510, 420),
+  new Obstacle('tree4', 590, 460),
+  new Obstacle('city1', 50, 390),
+  new Obstacle('city2', 730, 390),
+  new Obstacle('city3', 900, 390)
 ]
 class RenderObstacles {
   static RenderObst() {
@@ -160,7 +164,6 @@ class RenderObstacles {
     const City3 = document.querySelector('.city3');
     // ObstacleArray.forEach = (item,i) => {item.leftObst()};
     Bird.style.left = ObstacleArray[0].x + "px";
-    Bird.style.top = ObstacleArray[0].y + "px";
     Bird1.style.left = ObstacleArray[1].x + "px";
     Bird2.style.left = ObstacleArray[2].x + "px";
     Sky1.style.left = ObstacleArray[3].x + "px";
@@ -174,6 +177,20 @@ class RenderObstacles {
     City1.style.left = ObstacleArray[11].x + "px";
     City2.style.left = ObstacleArray[12].x + "px";
     City3.style.left = ObstacleArray[13].x + "px";
+    Bird.style.top = ObstacleArray[0].y + "px";
+    Bird1.style.top = ObstacleArray[1].y + "px";
+    Bird2.style.top = ObstacleArray[2].y + "px";
+    Sky1.style.top = ObstacleArray[3].y + "px";
+    Sky2.style.top = ObstacleArray[4].y + "px";
+    Sky3.style.top = ObstacleArray[5].y + "px";
+    Mount.style.top = ObstacleArray[6].y + "px";
+    Tree1.style.top = ObstacleArray[7].y + "px";
+    Tree2.style.top = ObstacleArray[8].y + "px";
+    Tree3.style.top = ObstacleArray[9].y + "px";
+    Tree4.style.top = ObstacleArray[10].y + "px";
+    City1.style.top = ObstacleArray[11].y + "px";
+    City2.style.top = ObstacleArray[12].y + "px";
+    City3.style.top = ObstacleArray[13].y + "px";
     ObstacleArray[0].leftBird();
     ObstacleArray[0].downBird();
     ObstacleArray[1].leftBird();
